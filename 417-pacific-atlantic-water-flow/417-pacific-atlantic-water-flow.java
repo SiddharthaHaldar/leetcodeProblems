@@ -5,19 +5,6 @@ class Solution {
         int visitedPacific[][] = new int[R][C];
         int visitedAtlantic[][] = new int[R][C];
         
-        //Set edges to 1 - edges will always be 1
-        /*for(int x = 0; x < R;x++)
-            visitedPacific[x][0] = 1;
-        
-        for(int y = 0; y < C;y++)
-            visitedPacific[0][y] = 1;
-        
-        for(int x = 0; x < R;x++)
-            visitedAtlantic[x][C-1] = 1;
-        
-        for(int y = 0; y < C;y++)
-            visitedAtlantic[R-1][y] = 1;*/
-        
         //Start moving from left edge and locate points that are reachable from there
         for(int x = 0; x < R;x++)
             helper(heights,visitedPacific,x,0,R,C);
