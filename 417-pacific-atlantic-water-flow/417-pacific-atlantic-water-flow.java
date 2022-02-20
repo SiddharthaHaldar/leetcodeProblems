@@ -30,19 +30,7 @@ class Solution {
             helper(heights,visitedAtlantic,R - 1,y,R,C);
         
         List<List<Integer>> L = new ArrayList<>();
-        /*for(int r = 0;r < R;r++){
-            for(int c = 0;c < C;c++){
-                System.out.print(visitedPacific[r][c]+"\t");
-                }
-            System.out.println();
-            }
-        System.out.println();
-        for(int r = 0;r < R;r++){
-            for(int c = 0;c < C;c++){
-                System.out.print(visitedAtlantic[r][c]+"\t");
-                }
-            System.out.println();
-            }*/
+        
         for(int r = 0;r < R;r++){
             for(int c = 0;c < C;c++){
                 if(visitedPacific[r][c] == 1 && visitedAtlantic[r][c] == 1){
