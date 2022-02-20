@@ -33,8 +33,6 @@ class Solution {
         for(int next : map.get(node)){
             if(next != source){
                 res &= traverse(map,next,node);
-                if(!res)
-                    break;
             }
         }
         return res;
