@@ -37,7 +37,6 @@ class Solution {
            if(!res)
                break;
         }
-        //Optimization in line 41. Remove this node, as it has already been dealt with!!
         visited.remove(key);
         return res;
     } 
