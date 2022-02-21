@@ -31,9 +31,10 @@ class Solution {
             return false;
         visited.add(node);
         for(int next : map.get(node)){
-            if(next != source){
+            if(next != source)
                 res &= traverse(map,next,node);
-            }
+            if(!res) 
+                break;
         }
         return res;
     }
