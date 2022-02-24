@@ -17,6 +17,9 @@ class Solution {
                 traverse(node,-1);
             }
         }
+        //Since edges has only edges, there maybe a node, with no nodes connected to it,
+        //and it will naturally not be present in edges. Thus (n-visited.size()) will give
+        //us the count of those nodes that have no edges connected to them
         return count + n - visited.size();
     }
     public void traverse(int Node,int source){
