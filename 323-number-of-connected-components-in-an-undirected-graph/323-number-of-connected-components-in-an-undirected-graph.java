@@ -10,7 +10,6 @@ class Solution {
             map.put(edge[0],l);
             map.put(edge[1],l2);
         }
-        System.out.println(map);
         int count = 0;
         for(int node : map.keySet()){
             if(!visited.contains(node) && map.get(node).size() > 0){
