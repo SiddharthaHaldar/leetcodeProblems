@@ -7,7 +7,7 @@ class Solution {
                !tokens[x].equals("-") &&
                !tokens[x].equals("*") &&
                !tokens[x].equals("/")){
-                stack.push(Integer.parseInt(tokens[x]));
+                stack.push(Integer.valueOf(tokens[x]));
             }
             else{
                int num1 = stack.pop();
