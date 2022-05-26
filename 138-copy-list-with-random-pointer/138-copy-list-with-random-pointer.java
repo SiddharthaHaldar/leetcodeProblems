@@ -21,10 +21,8 @@ class Solution {
        Node copyHead = copy;
        Node prev = null;
        while(node != null){
-          if(!map.containsKey(node)){
-              Node n = new Node(node.val); 
-              map.put(node,n);
-          }
+          if(!map.containsKey(node))
+              map.put(node,new Node(node.val));
           copy = map.get(node);
           if(prev != null){
               prev.next = copy;
