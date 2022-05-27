@@ -9,10 +9,8 @@ class TimeMap {
     public void set(String key, String value, int timestamp) {
         if(!this.mapT.containsKey(key)){
             List<Integer> lT = new ArrayList<>();
-            //lT.add(-1);
             lT.add(timestamp);
             List<String> lV = new ArrayList<>();
-            //lV.add("");
             lV.add(value);
             this.mapT.put(key,lT);
             this.mapV.put(key,lV);
@@ -30,8 +28,6 @@ class TimeMap {
     public String get(String key, int timestamp) {
        List<Integer> lT = this.mapT.get(key); 
         List<String> lV = this.mapV.get(key);
-        //System.out.println(lT);
-        //System.out.println(lV);
        if(lT == null || timestamp < lT.get(0))
            return "";
        int L = lT.size();
