@@ -59,7 +59,6 @@ class TimeMap {
                r = mid - 1;
            }
        }
-        System.out.println(mid);
        return this.mapV.get(key).get(mid);
     }
 }
