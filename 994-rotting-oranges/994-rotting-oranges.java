@@ -4,7 +4,6 @@ class Solution {
         int r = grid.length, 
             c = grid[0].length;
         Queue<int[]> q = new LinkedList<>();
-        System.out.println(q);
         int fresh = 0,rot = 0, total = 0;
         for(int x = 0;x < r;x++){
             for(int y = 0;y < c; y++){
@@ -47,8 +46,6 @@ class Solution {
             }
             minutes += 1;
         }
-        System.out.println(minutes);
-        System.out.println(freshtorot);
         //System.out.println(minutes);
         if(fresh == 0)
             return minutes;
