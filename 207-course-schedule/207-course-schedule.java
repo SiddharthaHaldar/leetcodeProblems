@@ -22,6 +22,8 @@ class Solution {
             res = res & dfs(key,map,visited);
             if(!res)
                 return res;
+            //Set the value of the key to a an empty list
+            //This is because afetr each traversal if no cycles are detected we know that that course/node can be traveresed sefely without any cycles.
             map.put(key,new ArrayList<>());
         }
         return res;
