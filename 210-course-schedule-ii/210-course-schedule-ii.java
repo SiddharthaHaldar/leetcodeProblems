@@ -22,7 +22,6 @@ class Solution {
             if(!adj.containsKey(course))
                 adj.put(course,new ArrayList<>());
         }
-        System.out.println(adj);
         for(int x = 0;x < numCourses;x++){
             if(!inserted.contains(x)){
                 res = res & dfs(x,adj);
