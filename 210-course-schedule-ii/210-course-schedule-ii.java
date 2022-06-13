@@ -47,8 +47,7 @@ class Solution {
                    break;
            }
         }
-                //Set the value of the key to a an empty list
-                //This is because afetr each traversal if no cycles are detected we know that that course/node can be traveresed sefely without any cycles.
+        //The inserted set helps in keeping track whether the node has already been porcessed. Using this infor, this node will not be visited in the future. this is similar to setting an empty arraylist against the node
         visited.remove(key);
         inserted.add(key);
         output[++pos] = key;
