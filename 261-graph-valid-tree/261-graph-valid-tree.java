@@ -20,6 +20,7 @@ class Solution {
           boolean res = traverse(map,node,-1);
           if(!res)
               return res;
+          //The next if check is crucial. If we start from one node and we are able to reach all nodes from there without any cycle that means we have successfully traversed the whole graph as a tree. If we did not have this check then we would unnecessarily iterate over the reast of the nodes and this would return a FLASE as these nodes have already been added to the visited set in the first pass!
           if(visited.size() == n) 
               return true;
         }
