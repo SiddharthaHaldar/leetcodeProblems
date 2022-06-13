@@ -30,8 +30,6 @@ class Solution {
             }
         }
         
-        List<Integer> output2 = new ArrayList<Integer>();
-        output2.toArray(new Integer[10]);
         return output;
     }
     public boolean dfs(Integer key,Map<Integer,List<Integer>> map){
