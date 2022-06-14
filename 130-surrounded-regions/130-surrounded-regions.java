@@ -18,7 +18,6 @@ class Solution {
         }
         for(int x = 0;x < r;x++){
             for(int y = 0;y < c;y++){
-                    //System.out.println(notCaptured[x][y]);
                    if(!notCaptured[x][y])
                         board[x][y] = 'X';
             }
