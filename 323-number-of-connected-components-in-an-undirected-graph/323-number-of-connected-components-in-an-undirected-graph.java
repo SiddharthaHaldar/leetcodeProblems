@@ -20,7 +20,8 @@ class Solution {
         //Since edges has only edges, there maybe a node, with no nodes connected to it,
         //and it will naturally not be present in edges. Thus (n-visited.size()) will give
         //us the count of those nodes that have no edges connected to them
-        return count + n - visited.size();
+        //This is useful for this case, n = 4 and edges = [[2,3],[1,2],[1,3]]
+        return count + (n - visited.size());
     }
     public void traverse(int Node,int source){
         visited.add(Node);
@@ -29,6 +30,6 @@ class Solution {
                 traverse(node,Node);
             }
         }
-        map.put(Node,new ArrayList<>());
+        //map.put(Node,new ArrayList<>());
     }
 }
