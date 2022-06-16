@@ -19,21 +19,21 @@ class Node {
 */
 
 class Solution {
-    Map<Node,Node> map = new HashMap<>();
+    Map<Integer,Node> map = new HashMap<>();
     public Node cloneGraph(Node node) {
         if(node == null)
             return node;
         Node newNode = new Node();
-        if(map.get(node) == null){
+        if(map.get(node.val) == null){
             newNode.val = node.val;
-            map.put(node,newNode);
+            map.put(node.val,newNode);
             for(Node neighbor : node.neighbors){
                 Node newNeighbor = cloneGraph(neighbor);
                 newNode.neighbors.add(newNeighbor);
             }
         }
         else
-            return map.get(node);
+            return map.get(node.val);
         return newNode;
     }
 }
