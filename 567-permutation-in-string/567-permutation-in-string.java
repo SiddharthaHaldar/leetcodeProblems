@@ -14,33 +14,23 @@ class Solution {
         System.out.println(maps1);
         int left = 0, right = 0;
         for(int x =0 ; x < l ; x++){
-           /*if(right - left + 1 == k) {
-              return true; 
-           }
-            else{*/
-                char c = s2.charAt(right);
-                if(!maps1.containsKey(c)){
-                    maps2.clear();
-                    right++;
-                    left = right;
+            char c = s2.charAt(right);
+            if(!maps1.containsKey(c)){
+                maps2.clear();
+                right++;
+                left = right;
+            }
+            else{
+                right++;
+                maps2.put(c,maps2.getOrDefault(c,0)+1);
+                while(maps2.get(c) > maps1.get(c)){
+                    char c2 = s2.charAt(left);
+                    maps2.put(c2,maps2.get(c2)-1);
+                    left++;
                 }
-                else{
-                    right++;
-                    maps2.put(c,maps2.getOrDefault(c,0)+1);
-                    System.out.println(maps2);
-                    while(maps2.get(c) > maps1.get(c)){
-                        System.out.println("exceeds");
-                        char c2 = s2.charAt(left);
-                        maps2.put(c2,maps2.get(c2)-1);
-                        left++;
-                        //maps2.clear();
-                        //left = right;
-                    }
-                    if(right - left == k)
-                        return true;
-                }
-            //System.out.println(maps2);
-            //}
+                if(right - left == k)
+                    return true;
+            }
         }
         return false;
     }
