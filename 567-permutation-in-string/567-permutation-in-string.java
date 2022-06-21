@@ -11,7 +11,7 @@ class Solution {
             maps1.put(c,maps1.get(c)+1);
         }
         
-        System.out.println(maps1);
+        //System.out.println(maps1);
         int left = 0, right = 0;
         for(int x =0 ; x < l ; x++){
             char c = s2.charAt(right);
@@ -24,6 +24,7 @@ class Solution {
                 right++;
                 maps2.put(c,maps2.getOrDefault(c,0)+1);
                 while(maps2.get(c) > maps1.get(c)){
+                    //We could have reset maps2 to an empty map, and shifted left to right, but it fails in this case : "adc" , "dcda". By setting left = right, when d's count would increment by 2, we push left to right which is in the last character. This causes the code to fail. In stead we shift the lft pointer till our counts match up.
                     char c2 = s2.charAt(left);
                     maps2.put(c2,maps2.get(c2)-1);
                     left++;
