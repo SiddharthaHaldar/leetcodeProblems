@@ -17,3 +17,4 @@ class Solution {
         return len;
     }
 }
+//This is an optimised sliding windowa approach which takes O(n) time. or the non-optim one we maintaina set wheeer we keep adding new characters. if we come across an already existing character, we keep moving the lft pointer and simlutaneously removing elements from the set, until that character is no longer there in the set. this causes at most 2 traversals hence o(2n) which is O(n), but there are still two passes involved.
