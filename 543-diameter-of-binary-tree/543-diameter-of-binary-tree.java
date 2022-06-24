@@ -23,11 +23,11 @@ class Solution {
         if(root == null)
             return 0;
         int left = 0,right = 0;
-        if(root.left != null)
+        //if(root.left != null)
             left = 1 + dfs(root.left);
-        if(root.right != null)
+        //if(root.right != null)
             right = 1 + dfs(root.right);
-        max = Math.max(max,left + right);
+        max = Math.max(max,left + right - 2);
         return Math.max(left,right);
     }
 }
