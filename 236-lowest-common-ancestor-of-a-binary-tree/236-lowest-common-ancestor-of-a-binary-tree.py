@@ -21,11 +21,8 @@ class Solution:
                 return False
             if(root.right != None):
                 right = helper(root.right,p,q)
-            #print(lca)
             if((Self and (left or right)) or (left and right)):
-                #print("found")
                 lca = root
-                #print(lca)
                 return False
             return Self or left or right
         helper(root,p,q)
