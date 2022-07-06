@@ -7,7 +7,7 @@
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        lca = [None]
+        lca = None
         def helper(root,p,q):
             #nonlocal lca
             Self = False
@@ -22,10 +22,10 @@ class Solution:
             #print(lca)
             if((Self and (left or right)) or (left and right)):
                 #print("found")
-                #nonlocal lca
-                lca[0] = root
+                nonlocal lca
+                lca = root
                 #print(lca)
                 return False
             return Self or left or right
         helper(root,p,q)
-        return lca[0]
+        return lca
