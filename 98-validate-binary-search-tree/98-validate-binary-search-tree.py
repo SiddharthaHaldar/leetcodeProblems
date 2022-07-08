@@ -6,12 +6,10 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        stack = []
         res = True
         val = -inf
         def traverse(root):
             nonlocal val,res
-            #print(stack)
             if(root.left and res):
                 traverse(root.left)
             if(val < root.val):
