@@ -9,10 +9,10 @@ class Solution:
         count = 0
         #print(-1 * float("inf"))
         def dfs(root,Max):
-            nonlocal count
             Max = max(root.val, Max)
             #print(Max)
             if(Max == root.val):
+                nonlocal count
                 count += 1
                 #print(root.val)
             if(root.left is not None): 
