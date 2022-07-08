@@ -8,18 +8,16 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         stack = []
         res = True
+        val = -inf
         def traverse(root):
-            nonlocal stack,res
+            nonlocal val,res
             #print(stack)
             if(root.left and res):
                 traverse(root.left)
-            if(len(stack) > 0):
-                if(stack[len(stack) - 1] < root.val):
-                    stack.append(root.val)
-                else:
-                    res = False
+            if(val < root.val):
+                val = root.val
             else:
-                stack.append(root.val)
+                res = False
             if(root.right and res): 
                 traverse(root.right)
         traverse(root)
