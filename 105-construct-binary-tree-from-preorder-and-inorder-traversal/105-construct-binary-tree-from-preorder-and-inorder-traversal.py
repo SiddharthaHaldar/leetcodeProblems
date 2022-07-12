@@ -19,10 +19,7 @@
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         ptr = 0
-        preorderDict = {}
         inorderDict = {}
-        for idx,node in enumerate(preorder):
-            preorderDict[node] = idx
         for idx,node in enumerate(inorder):
             inorderDict[node] = idx
         
