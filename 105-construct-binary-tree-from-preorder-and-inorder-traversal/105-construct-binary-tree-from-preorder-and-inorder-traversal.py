@@ -32,13 +32,9 @@ class Solution:
             inorderIdx = inorderDict[nodeVal]
             node = TreeNode(nodeVal)
             ptr += 1
-            #print(ptr)
-            #print("\n")
             if(lLim <= inorderIdx - 1 and ptr < len(preorder)):
-                #print(node.val,ptr,"l")
                 node.left = helper(lLim, inorderIdx - 1)
             if(rLim >= inorderIdx + 1 and ptr < len(preorder)):
-                #print(node.val,ptr,"r")
                 node.right = helper(inorderIdx + 1, rLim)
             return node
         
