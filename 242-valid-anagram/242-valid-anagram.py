@@ -4,10 +4,9 @@ class Solution:
             return False
         ds = {}
         for c in s:
-            if(c in ds):
-                ds[c] = ds[c] + 1
-            else:
-                ds[c] = 1
+            if(c not in ds):
+                ds[c] = 0
+            ds[c] = ds[c] + 1
                 
         l = len(ds.keys())
         
@@ -16,9 +15,7 @@ class Solution:
                 return False
             else:
                 ds[c] = ds[c] - 1
-                if(ds[c] == 0):
-                    l -= 1
-                elif(ds[c] < 0):
+                if(ds[c] < 0):
                     return False
             
         return True
