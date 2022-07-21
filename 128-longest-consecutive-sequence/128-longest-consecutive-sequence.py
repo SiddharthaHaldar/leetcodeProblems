@@ -5,7 +5,7 @@ class Solution:
         for num in nums:
             dict[num] =  False
         
-        for num in dict:
+        for num in dict.keys():
             count = 0
             if(not dict[num]):
                 dict[num] = True
