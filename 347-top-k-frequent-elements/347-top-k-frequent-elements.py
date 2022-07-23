@@ -15,8 +15,7 @@ class Solution:
         count = 0
         idx = len(buckets) - 1
         res = []
-        while count < k:
-            count += len(buckets[idx])
+        while len(res) < k:
             res.extend(buckets[idx])
             idx -= 1
             
