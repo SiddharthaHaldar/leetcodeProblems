@@ -8,10 +8,8 @@ class Solution:
                 d[num] = 0
             d[num] = d[num] + 1
         
-        #print(buckets,d)
         for key in d.keys():
             idx = d[key] - 1
-            #print(buckets[idx])
             buckets[idx].append(key)
             
         count = 0
@@ -21,7 +19,5 @@ class Solution:
             count += len(buckets[idx])
             res.extend(buckets[idx])
             idx -= 1
-            #print(count,res)
-        #print(buckets)
-        #print(res)
+            
         return res
