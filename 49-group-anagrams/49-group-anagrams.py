@@ -1,6 +1,6 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        d = {}
+        d = defaultdict(list)
         for str in strs:
             asciis = [0] * 26
             for c in str:
@@ -8,9 +8,6 @@ class Solution:
                 asciis[idx] = asciis[idx] + 1
             
             key = tuple(asciis)
-            if (key not in d):
-                d[key] = []
-            
             d[key].append(str)
             
         
