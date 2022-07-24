@@ -10,8 +10,5 @@ class Solution:
             key = tuple(asciis)
             d[key].append(str)
             
-        
-        res = []
-        [res.append(d[key]) for key in d.keys()]
-        return res
+        return d.values()
             
