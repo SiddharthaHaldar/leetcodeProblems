@@ -18,9 +18,6 @@ class Solution:
                   r <= len(s) - 1 and l < r):
                 r -= 1
             
-            '''if(r < l):
-                return True'''
-            print(s[l],s[r])
             if(s[l].lower() != s[r].lower()):
                 return False
                 
