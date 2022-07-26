@@ -19,10 +19,10 @@ class Solution:
                         #look for other solutuions if avaialble,
                         #for example our problem has two solutions when 
                         #nums[x] = -1 [-1,2] and [0,1]
-                        while(l+1 < len(nums) and nums[l+1] == nums[l]):
+                        while(l < r and nums[l+1] == nums[l]):
                             l += 1
                         l += 1
-                        while(r >= 0 and nums[r-1] == nums[r]):
+                        while(l < r and nums[r-1] == nums[r]):
                             r -= 1
                         r -= 1
                     
