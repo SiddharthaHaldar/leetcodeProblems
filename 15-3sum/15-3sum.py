@@ -16,6 +16,9 @@ class Solution:
                         r -= 1
                     else:
                         res.append([nums[x],nums[l],nums[r]])
+                        #look for other solutuions if avaialble,
+                        #for example our problem has two solutions when 
+                        #nums[x] = -1 [-1,2] and [0,1]
                         while(l+1 < len(nums) and nums[l+1] == nums[l]):
                             l += 1
                         l += 1
