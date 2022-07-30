@@ -6,8 +6,7 @@ class Solution:
             price = prices[x]
             if price < Min:
                 Min = price
-            else:
-                diff = price - Min
-                Max = max(diff,Max)
+            elif price - Min > Max:
+                Max = price - Min
             
         return Max
