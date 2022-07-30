@@ -2,7 +2,8 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         Max = 0 
         Min = float(inf)
-        for price in prices:
+        for x in range(0,len(prices)):
+            price = prices[x]
             if price < Min:
                 Min = price
             else:
