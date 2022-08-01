@@ -6,17 +6,13 @@ class Solution:
         dq.append(nums[0])
         
         while r < k:
-            #print(dq)
             while dq and nums[r] > dq[-1]:
-                #print(nums[r],dq)
                 dq.pop()
             dq.append(nums[r])
             r += 1
         
-        #print("dq",dq)
         res.append(dq[0])
         while r < len(nums):
-            #print(dq)
             if(r - l == k):
                 if(nums[l] == dq[0]):
                     dq.popleft()
