@@ -16,22 +16,18 @@ class LRUCache:
     def get(self, key: int) -> int:
         if(key in self.map):
             node = self.map[key]
-            if(self.count > 1):
-                if(node.next == None):
+            if(self.count > 1 and self.head != node):
+                if(self.last == node):
                     node.prev.next = None
                     self.last = node.prev
-                    node.prev = None
-                    node.next = self.head
-                    node.next.prev = node
-                    self.head = node
-                elif(node.next != None and node.prev != None):
+                else:
                     node.prev.next = node.next
                     node.next.prev = node.prev
-                    node.prev = None
-                    node.next = self.head
-                    node.next.prev = node
-                    self.head = node
                     
+                node.prev = None
+                node.next = self.head
+                node.next.prev = node
+                self.head = node
             trav =self.head
             return node.val
         else:
@@ -40,22 +36,18 @@ class LRUCache:
     def put(self, key: int, value: int) -> None:
         if(key in self.map):
             node = self.map[key]
-            if(self.count > 1):
-                if(node.next == None):
+            if(self.count > 1 and self.head != node):
+                if(self.last == node):
                     node.prev.next = None
                     self.last = node.prev
-                    node.prev = None
-                    node.next = self.head
-                    node.next.prev = node
-                    self.head = node
-                elif(node.next != None and node.prev != None):
+                else:
                     node.prev.next = node.next
                     node.next.prev = node.prev
-                    node.prev = None
-                    node.next = self.head
-                    node.next.prev = node
-                    self.head = node
                     
+                node.prev = None
+                node.next = self.head
+                node.next.prev = node
+                self.head = node
             node.val = value
             self.map[key] = node
             trav =self.head
