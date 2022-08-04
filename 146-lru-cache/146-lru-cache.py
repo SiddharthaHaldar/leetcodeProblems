@@ -13,22 +13,24 @@ class LRUCache:
         self.last = None
         self.map = {}
 
+    def nodeInMap(self, node: Node):
+        if(self.count > 1 and self.head != node):
+            if(self.last == node):
+                node.prev.next = None
+                self.last = node.prev
+            else:
+                node.prev.next = node.next
+                node.next.prev = node.prev
+
+            node.prev = None
+            node.next = self.head
+            node.next.prev = node
+            self.head = node
+            
     def get(self, key: int) -> int:
         if(key in self.map):
             node = self.map[key]
-            if(self.count > 1 and self.head != node):
-                if(self.last == node):
-                    node.prev.next = None
-                    self.last = node.prev
-                else:
-                    node.prev.next = node.next
-                    node.next.prev = node.prev
-                    
-                node.prev = None
-                node.next = self.head
-                node.next.prev = node
-                self.head = node
-            trav =self.head
+            self.nodeInMap(node)
             return node.val
         else:
             return -1
@@ -36,21 +38,9 @@ class LRUCache:
     def put(self, key: int, value: int) -> None:
         if(key in self.map):
             node = self.map[key]
-            if(self.count > 1 and self.head != node):
-                if(self.last == node):
-                    node.prev.next = None
-                    self.last = node.prev
-                else:
-                    node.prev.next = node.next
-                    node.next.prev = node.prev
-                    
-                node.prev = None
-                node.next = self.head
-                node.next.prev = node
-                self.head = node
+            self.nodeInMap(node)
             node.val = value
             self.map[key] = node
-            trav =self.head
         else:
             node = Node(key,value)
             self.count += 1
