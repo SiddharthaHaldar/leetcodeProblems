@@ -16,7 +16,9 @@ class Solution:
             elif(nums[mid] > target):
                 high = mid - 1
         #print("\n")  
-        low,high = 0,len(nums) - 1
+        if(start == -1):
+            return[-1,-1]
+        low,high = start,len(nums) - 1
         while(low <= high):
             mid = (low + high) // 2
             #print(mid,nums[mid])
